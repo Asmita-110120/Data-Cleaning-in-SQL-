@@ -19,12 +19,8 @@ SET SaleDate = CONVERT(Date,SaleDate)
 
 
 
--- Populate Property Address data
 
-Select *
-From PortfolioProject.dbo.NashvilleHousing
---Where PropertyAddress is null
-order by ParcelID
+
 
 
 
@@ -32,7 +28,7 @@ Select a.ParcelID, a.PropertyAddress, b.ParcelID, b.PropertyAddress, ISNULL(a.Pr
 From PortfolioProject.dbo.NashvilleHousing a
 JOIN PortfolioProject.dbo.NashvilleHousing b
 	on a.ParcelID = b.ParcelID
-	AND a.[UniqueID ] <> b.[UniqueID ]
+	AND a.[UniqueID ] <> b.[UniqueID]
 Where a.PropertyAddress is null
 
 
